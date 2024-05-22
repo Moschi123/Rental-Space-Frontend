@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import "./searchbar.scss";
 
 const types: string[] = ["buy", "rent"];
@@ -18,16 +18,9 @@ function SearchBar() {
     maxPrice: 0,
   });
 
- 
-
   return (
     <div className="searchBar">
-      <div className="type">
-      
-        
-         
-       
-      </div>
+      <div className="type"></div>
       <form>
         <input type="text" name="location" placeholder="City Location" />
         <input

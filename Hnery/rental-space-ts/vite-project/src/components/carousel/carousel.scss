@@ -3,15 +3,14 @@
   max-width: 60%;
   overflow: hidden;
   border: 1px solid #ffffff;
-border-radius: 9px;
-
+  border-radius: 9px;
 }
 .carousel__btn {
   position: absolute;
   padding: 20px;
   top: 50%;
   transform: translateY(-50%);
-  background-color:transparent;
+  background-color: transparent;
   color: white;
   font-size: 1.5rem;
   border: none;
@@ -31,7 +30,7 @@ border-radius: 9px;
 }
 .carousel__img {
   width: 100%;
-  
+
   height: auto;
   display: block;
   transition: transform 0.3s ease-in-out;
