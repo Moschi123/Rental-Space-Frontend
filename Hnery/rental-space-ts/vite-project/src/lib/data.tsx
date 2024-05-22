@@ -67,7 +67,8 @@ export const singlePostData: SinglePost = {
   school: "250m away",
   bus: "100m away",
   restaurant: "50m away",
-  description: "Future alike hill pull picture swim magic chain seed engineer nest outer raise bound easy poetry gain loud weigh me recognize farmer bare danger...",
+  description:
+    "Future alike hill pull picture swim magic chain seed engineer nest outer raise bound easy poetry gain loud weigh me recognize farmer bare danger...",
 };
 
 export const userData: UserData = {

@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import "./carousel.scss"
+import { useState } from "react";
+import "./carousel.scss";
+
 interface CarouselProps {
   images: string[];
 }

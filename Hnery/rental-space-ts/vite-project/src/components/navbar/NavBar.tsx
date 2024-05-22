@@ -25,7 +25,6 @@ function Navbar() {
               alt=""
             />
             <span>Franco</span>
-        
           </div>
         ) : (
           <>

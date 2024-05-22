@@ -1,21 +1,14 @@
-
 import "./card.scss";
-
-
 
 function Card() {
   return (
     <div className="card">
       <div className="imageContainer">
-
         <img src="./colom.jpg" alt="" />
-      
       </div>
 
       <div className="textContainer">
-        <h2 className="title">
-         Casa bonita
-        </h2>
+        <h2 className="title">Casa bonita</h2>
         <p className="address">
           <img src="/pin.png" alt="" />
           <span>Almirante brown</span>

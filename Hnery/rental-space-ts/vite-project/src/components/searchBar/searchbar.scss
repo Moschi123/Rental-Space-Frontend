@@ -2,8 +2,6 @@
 
 .searchBar {
   .type {
-
-
     button {
       padding: 16px 36px;
       border: 1px solid #999;
@@ -29,13 +27,13 @@
   }
 
   form {
-      display: flex;
-      gap: 10px;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 14px;
-      transition: border-color 0.3s ease;
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
 
     @include sm {
       flex-direction: column;
@@ -63,7 +61,7 @@
         }
       }
 
-      @include sm{
+      @include sm {
         width: auto;
         &:nth-child(2),
         &:nth-child(3) {
@@ -80,7 +78,7 @@
       background-color: #fece51;
       flex: 1;
 
-      @include sm{
+      @include sm {
         padding: 10px;
       }
 

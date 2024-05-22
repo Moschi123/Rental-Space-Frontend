@@ -1,18 +1,17 @@
-
+import { Slider } from "@/components";
 import "./singlePage.scss";
-import Slider from "../../components/slider/slider"
 
 const images = [
-    "https://via.placeholder.com/400",
-    "https://via.placeholder.com/400",
-    "https://via.placeholder.com/400",
-  ];
+  "https://via.placeholder.com/400",
+  "https://via.placeholder.com/400",
+  "https://via.placeholder.com/400",
+];
 function SinglePage() {
   return (
     <div className="singlePage">
       <div className="details">
         <div className="wrapper">
-          <Slider  images={images} />
+          <Slider images={images} />
           <div className="info">
             <div className="top">
               <div className="post">
@@ -28,7 +27,11 @@ function SinglePage() {
                 <span>nombre</span>
               </div>
             </div>
-            <div className="bottom">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ipsum voluptatum minima eveniet, eos impedit architecto reiciendis dicta quibus</div>
+            <div className="bottom">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+              ipsum voluptatum minima eveniet, eos impedit architecto reiciendis
+              dicta quibus
+            </div>
           </div>
         </div>
       </div>
@@ -38,9 +41,7 @@ function SinglePage() {
           <div className="listVertical">
             <div className="feature">
               <img src="/utility.png" alt="" />
-              <div className="featureText">
-              
-              </div>
+              <div className="featureText"></div>
             </div>
             <div className="feature">
               <img src="/pet.png" alt="" />
@@ -88,15 +89,10 @@ function SinglePage() {
                 <p>100m </p>
               </div>
             </div>
-            <div className="feature">
-             
-              
-            </div>
+            <div className="feature"></div>
           </div>
           <p className="title">Locacion</p>
-          <div className="mapContainer">
-           
-          </div>
+          <div className="mapContainer"></div>
           <div className="buttons">
             <button>
               <img src="/chat.png" alt="" />
@@ -104,7 +100,7 @@ function SinglePage() {
             </button>
             <button>
               <img src="/save.png" alt="" />
-             Guardar!
+              Guardar!
             </button>
           </div>
         </div>
