@@ -1,57 +1,84 @@
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { NavLink } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import { Login, Logout } from "../users";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faGear,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
 import "./navbar.scss";
 
-function Navbar() {
-  const [open, setOpen] = useState(false);
+const Navbar: React.FC = () => {
+  const [isOpenProfile, setIsOpenProfile] = useState<boolean>(false);
+  const { isAuthenticated, user } = useAuth0();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const user: boolean = true; // Asigna el tipo de dato apropiado a user
+  useEffect(() => {
+    const handleClickOutside = ({ target }: Event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(target as Node)) {
+        setIsOpenProfile(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownRef]);
 
   return (
     <nav>
       <div className="left">
-        <a href="/" className="logo">
+        <NavLink to="/" className="logo">
           <img src="/logo.png" alt="" />
           <span>Rental Space</span>
-        </a>
-        <a href="/">Sobre nosotros</a>
-        <a href="/">Contacto</a>
-        <a href="/">Agentes</a>
+        </NavLink>
+        <NavLink to="/">Sobre nosotros</NavLink>
+        <NavLink to="/">Contacto</NavLink>
+        <NavLink to="/">Agentes</NavLink>
       </div>
       <div className="right">
-        {user ? (
-          <div className="user">
-            <img
-              src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-              alt=""
-            />
-            <span>Franco</span>
+        {isAuthenticated ? (
+          <div
+            className="profile"
+            onClick={() => setIsOpenProfile(!isOpenProfile)}
+          >
+            <img src={user?.picture} alt="" />
+
+            {isOpenProfile && (
+              <div className="submenu" ref={dropdownRef} id="dropdownHover">
+                <h3>
+                  <span>Cesar Martinez</span>
+                  <span>FullStack Developer</span>
+                </h3>
+                <ul>
+                  <li>
+                    <FontAwesomeIcon icon={faUser} />
+                    <NavLink className="navlink" to="/profile">
+                      Profile
+                    </NavLink>
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faGear} />
+                    <NavLink className="navlink" to="#">
+                      Settings
+                    </NavLink>
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faRightFromBracket} />
+                    <Logout />
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         ) : (
-          <>
-            <a href="/">Sign in</a>
-            <a href="/" className="register">
-              Sign up
-            </a>
-          </>
+          <Login />
         )}
-        <div className="menuIcon">
-          <img
-            src="/menu.png"
-            alt=""
-            onClick={() => setOpen((prev) => !prev)}
-          />
-        </div>
-        <div className={open ? "menu active" : "menu"}>
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
-          <a href="/">Agents</a>
-          <a href="/">Sign in</a>
-          <a href="/">Sign up</a>
-        </div>
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

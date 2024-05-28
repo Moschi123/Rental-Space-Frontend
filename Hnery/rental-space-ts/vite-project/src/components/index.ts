@@ -4,3 +4,4 @@ export { default as List } from "./list/List";
 export { default as Navbar } from "./navbar/NavBar";
 export { default as SearchBar } from "./searchBar/SearchBar";
 export { default as Slider } from "./slider/Slider";
+export { default as Loading } from "./Loading";
