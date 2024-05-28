@@ -1,10 +1,32 @@
 import "./singlePage.scss";
 import Slider from "../../components/slider/slider"
+import Map from "../../components/map/Map";
 
 const images = [
     "https://via.placeholder.com/400",
     "https://via.placeholder.com/400",
     "https://via.placeholder.com/400",
+  ];
+  const items = [
+    {
+      id: '1',
+      latitude: 52.4797,
+      longitude: -1.90269,
+      img: 'path_to_image_1',
+      title: 'Item 1',
+      bedroom: 3,
+      price: 100
+    },
+    {
+      id: '2',
+      latitude: 53.4797,
+      longitude: -1.90269,
+      img: 'path_to_image_2',
+      title: 'Item 2',
+      bedroom: 2,
+      price: 150
+    }
+    // Agrega más items según sea necesario
   ];
 function SinglePage() {
   return (
@@ -94,7 +116,7 @@ function SinglePage() {
           </div>
           <p className="title">Locacion</p>
           <div className="mapContainer">
-           
+          <Map items={items} />
           </div>
           <div className="buttons">
             <button>
